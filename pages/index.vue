@@ -1,28 +1,27 @@
 <template>
   <div>
-    <!-- Hero Section -->
-    <section id="hero-section" class="bg-gradient-to-br from-blue-50 to-indigo-100 py-20">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center">
-          <h1 class="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-            Your Gateway to
-            <span class="text-blue-600">Higher Education</span>
-          </h1>
-              <p class="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+        <!-- Hero Section -->
+        <section id="hero-section" class="relative py-20 overflow-hidden">
+          <!-- Background Image -->
+          <div class="absolute inset-0 z-0">
+            <img 
+              src="/assets/grad3.jpg" 
+              alt="Graduates celebrating success" 
+              class="w-full h-full object-cover"
+            />
+            <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+          </div>
+          
+          <!-- Content -->
+          <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+              <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">
+                Your Gateway to
+                <span class="text-blue-300">Higher Education</span>
+              </h1>
+              <p class="text-xl text-gray-200 mb-8 max-w-3xl mx-auto">
                 Discover universities and colleges worldwide. All in one central platform.
               </p>
-              
-              <!-- Success Story Image -->
-              <div class="mb-8">
-                <img 
-                  src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
-                  alt="Graduates celebrating their success" 
-                  class="mx-auto rounded-lg shadow-lg max-w-md w-full h-64 object-cover"
-                />
-                <p class="text-sm text-gray-500 mt-2 text-center italic">
-                  Join thousands of successful graduates who found their perfect university
-                </p>
-              </div>
           
           <!-- Search Bar -->
           <div class="max-w-2xl mx-auto mb-8">
