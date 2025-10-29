@@ -5,7 +5,7 @@
           <!-- Background Image -->
           <div class="absolute inset-0 z-0">
             <img 
-              src="/assets/grad3.jpg" 
+              src="/_nuxt/grad3.D518lx2p.jpg" 
               alt="Graduates celebrating success" 
               class="w-full h-full object-cover"
             />
