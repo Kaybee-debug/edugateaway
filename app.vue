@@ -100,24 +100,26 @@ import { ref } from 'vue'
 // Mobile menu state
 const mobileMenuOpen = ref(false)
 
-// Navigation functionality
-const scrollToSection = (sectionId) => {
-  const sections = {
-    'hero': 'hero-section',
-    'search': 'hero-section',
-    'categories': 'categories-section',
-    'institutions': 'institutions-section',
-    'about': 'about-section'
-  }
-  
-  const element = document.getElementById(sections[sectionId])
-  if (element) {
-    element.scrollIntoView({ 
-      behavior: 'smooth',
-      block: 'start'
-    })
-  }
-}
+    // Navigation functionality
+    const scrollToSection = (sectionId) => {
+      const sections = {
+        'hero': 'hero-section',
+        'search': 'hero-section',
+        'categories': 'categories-section',
+        'institutions': 'institutions-section',
+        'about': 'about-section'
+      }
+      
+      const element = document.getElementById(sections[sectionId])
+      if (element) {
+        element.scrollIntoView({ 
+          behavior: 'smooth',
+          block: 'start'
+        })
+      } else {
+        console.log('Element not found:', sections[sectionId])
+      }
+    }
 
 // Mobile menu toggle
 const toggleMobileMenu = () => {

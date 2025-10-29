@@ -389,11 +389,15 @@ const filteredInstitutions = computed(() => {
 // Methods
 const filterByType = (type) => {
   selectedType.value = type
+  // Scroll to institutions section to show filtered results
+  scrollToSection('institutions')
 }
 
 const performSearch = () => {
   // Search is already reactive through the computed property
   console.log('Searching for:', searchQuery.value)
+  // Scroll to institutions section to show results
+  scrollToSection('institutions')
 }
 
 // Navigation functionality
