@@ -378,7 +378,7 @@ const institutions = ref([
       students: '8,000+',
       category: 'private'
     },
-    // TVET Colleges - Featured Selection
+    // TVET Colleges - Top 3 Only
     {
       id: 13,
       name: 'Central Johannesburg TVET College',
@@ -391,12 +391,12 @@ const institutions = ref([
     },
     {
       id: 14,
-      name: 'Tshwane North TVET College',
+      name: 'College of Cape Town',
       type: 'TVET College',
       badgeClass: 'bg-red-100 text-red-800 text-xs font-medium px-2.5 py-0.5 rounded',
-      description: 'Leading TVET college in Tshwane offering programs in engineering, agriculture, and business.',
-      location: 'Tshwane, Gauteng',
-      students: '18,000+',
+      description: 'One of the oldest TVET colleges in South Africa, offering diverse technical programs.',
+      location: 'Cape Town, Western Cape',
+      students: '20,000+',
       category: 'tvet'
     },
     {
@@ -407,36 +407,6 @@ const institutions = ref([
       description: 'Located in Durban, offering programs in engineering, business, and hospitality.',
       location: 'Durban, KwaZulu-Natal',
       students: '16,000+',
-      category: 'tvet'
-    },
-    {
-      id: 16,
-      name: 'College of Cape Town',
-      type: 'TVET College',
-      badgeClass: 'bg-red-100 text-red-800 text-xs font-medium px-2.5 py-0.5 rounded',
-      description: 'One of the oldest TVET colleges in South Africa, offering diverse technical programs.',
-      location: 'Cape Town, Western Cape',
-      students: '20,000+',
-      category: 'tvet'
-    },
-    {
-      id: 17,
-      name: 'Buffalo City TVET College',
-      type: 'TVET College',
-      badgeClass: 'bg-red-100 text-red-800 text-xs font-medium px-2.5 py-0.5 rounded',
-      description: 'Leading TVET college in East London offering programs in engineering and business studies.',
-      location: 'East London, Eastern Cape',
-      students: '15,000+',
-      category: 'tvet'
-    },
-    {
-      id: 18,
-      name: 'Motheo TVET College',
-      type: 'TVET College',
-      badgeClass: 'bg-red-100 text-red-800 text-xs font-medium px-2.5 py-0.5 rounded',
-      description: 'Serving the Free State region with programs in engineering, agriculture, and business.',
-      location: 'Bloemfontein, Free State',
-      students: '10,000+',
       category: 'tvet'
     }
 ])
