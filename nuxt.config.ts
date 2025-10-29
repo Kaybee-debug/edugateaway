@@ -12,5 +12,8 @@ export default defineNuxtConfig({
   app: {
     baseURL: '/edugateaway/',
     buildAssetsDir: '/_nuxt/'
+  },
+  generate: {
+    fallback: true
   }
 })
