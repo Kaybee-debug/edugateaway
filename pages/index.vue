@@ -81,22 +81,39 @@
           </div>
         </div>
         
-        <div class="text-center mt-8">
-          <div 
-            @click="filterByType('online')" 
-            :class="['inline-flex p-8 border rounded-lg hover:shadow-lg transition-all cursor-pointer', selectedType === 'online' ? 'border-orange-500 bg-orange-50' : 'border-gray-200']"
-          >
-            <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
-              <svg class="w-8 h-8 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-              </svg>
+            <div class="text-center mt-8">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div 
+                  @click="filterByType('online')" 
+                  :class="['inline-flex p-8 border rounded-lg hover:shadow-lg transition-all cursor-pointer', selectedType === 'online' ? 'border-orange-500 bg-orange-50' : 'border-gray-200']"
+                >
+                  <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-8 h-8 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                    </svg>
+                  </div>
+                  <div class="ml-4 text-left">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Online Programs</h3>
+                    <p class="text-gray-600">Flexible learning options from anywhere in the world</p>
+                  </div>
+                </div>
+                
+                <div 
+                  @click="filterByType('tvet')" 
+                  :class="['inline-flex p-8 border rounded-lg hover:shadow-lg transition-all cursor-pointer', selectedType === 'tvet' ? 'border-red-500 bg-red-50' : 'border-gray-200']"
+                >
+                  <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-8 h-8 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 019 10.172V5L8 4z"></path>
+                    </svg>
+                  </div>
+                  <div class="ml-4 text-left">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">TVET Colleges</h3>
+                    <p class="text-gray-600">Technical and vocational education and training institutions</p>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="ml-4 text-left">
-              <h3 class="text-xl font-semibold text-gray-900 mb-2">Online Programs</h3>
-              <p class="text-gray-600">Flexible learning options from anywhere in the world</p>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
 
@@ -351,16 +368,204 @@ const institutions = ref([
     students: '20,000+',
     category: 'online'
   },
-  {
-    id: 12,
-    name: 'Milpark Education',
-    type: 'Private College',
-    badgeClass: 'bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded',
-    description: 'A private higher education institution offering business and management programs with flexible study options.',
-    location: 'Johannesburg, Cape Town',
-    students: '8,000+',
-    category: 'private'
-  }
+    {
+      id: 12,
+      name: 'Milpark Education',
+      type: 'Private College',
+      badgeClass: 'bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded',
+      description: 'A private higher education institution offering business and management programs with flexible study options.',
+      location: 'Johannesburg, Cape Town',
+      students: '8,000+',
+      category: 'private'
+    },
+    // TVET Colleges - Gauteng
+    {
+      id: 13,
+      name: 'Central Johannesburg TVET College',
+      type: 'TVET College',
+      badgeClass: 'bg-red-100 text-red-800 text-xs font-medium px-2.5 py-0.5 rounded',
+      description: 'A leading TVET college in Johannesburg offering technical and vocational programs in engineering, business, and IT.',
+      location: 'Johannesburg, Gauteng',
+      students: '15,000+',
+      category: 'tvet'
+    },
+    {
+      id: 14,
+      name: 'Ekurhuleni East TVET College',
+      type: 'TVET College',
+      badgeClass: 'bg-red-100 text-red-800 text-xs font-medium px-2.5 py-0.5 rounded',
+      description: 'Providing quality technical and vocational education in the East Rand region with modern facilities.',
+      location: 'Ekurhuleni, Gauteng',
+      students: '12,000+',
+      category: 'tvet'
+    },
+    {
+      id: 15,
+      name: 'Ekurhuleni West TVET College',
+      type: 'TVET College',
+      badgeClass: 'bg-red-100 text-red-800 text-xs font-medium px-2.5 py-0.5 rounded',
+      description: 'Offering practical skills training in engineering, hospitality, and business studies.',
+      location: 'Ekurhuleni, Gauteng',
+      students: '10,000+',
+      category: 'tvet'
+    },
+    {
+      id: 16,
+      name: 'Sedibeng TVET College',
+      type: 'TVET College',
+      badgeClass: 'bg-red-100 text-red-800 text-xs font-medium px-2.5 py-0.5 rounded',
+      description: 'Committed to providing quality technical and vocational education in the Sedibeng region.',
+      location: 'Sedibeng, Gauteng',
+      students: '8,000+',
+      category: 'tvet'
+    },
+    {
+      id: 17,
+      name: 'Tshwane North TVET College',
+      type: 'TVET College',
+      badgeClass: 'bg-red-100 text-red-800 text-xs font-medium px-2.5 py-0.5 rounded',
+      description: 'Leading TVET college in Tshwane offering programs in engineering, agriculture, and business.',
+      location: 'Tshwane, Gauteng',
+      students: '18,000+',
+      category: 'tvet'
+    },
+    {
+      id: 18,
+      name: 'Tshwane South TVET College',
+      type: 'TVET College',
+      badgeClass: 'bg-red-100 text-red-800 text-xs font-medium px-2.5 py-0.5 rounded',
+      description: 'Providing technical and vocational training with focus on practical skills development.',
+      location: 'Tshwane, Gauteng',
+      students: '14,000+',
+      category: 'tvet'
+    },
+    // TVET Colleges - KwaZulu-Natal
+    {
+      id: 19,
+      name: 'Coastal TVET College',
+      type: 'TVET College',
+      badgeClass: 'bg-red-100 text-red-800 text-xs font-medium px-2.5 py-0.5 rounded',
+      description: 'Serving the coastal region of KZN with programs in maritime studies, tourism, and hospitality.',
+      location: 'KwaZulu-Natal',
+      students: '11,000+',
+      category: 'tvet'
+    },
+    {
+      id: 20,
+      name: 'Elangeni TVET College',
+      type: 'TVET College',
+      badgeClass: 'bg-red-100 text-red-800 text-xs font-medium px-2.5 py-0.5 rounded',
+      description: 'Offering technical and vocational programs with emphasis on rural development and agriculture.',
+      location: 'KwaZulu-Natal',
+      students: '9,000+',
+      category: 'tvet'
+    },
+    {
+      id: 21,
+      name: 'Thekwini TVET College',
+      type: 'TVET College',
+      badgeClass: 'bg-red-100 text-red-800 text-xs font-medium px-2.5 py-0.5 rounded',
+      description: 'Located in Durban, offering programs in engineering, business, and hospitality.',
+      location: 'Durban, KwaZulu-Natal',
+      students: '16,000+',
+      category: 'tvet'
+    },
+    // TVET Colleges - Western Cape
+    {
+      id: 22,
+      name: 'College of Cape Town',
+      type: 'TVET College',
+      badgeClass: 'bg-red-100 text-red-800 text-xs font-medium px-2.5 py-0.5 rounded',
+      description: 'One of the oldest TVET colleges in South Africa, offering diverse technical programs.',
+      location: 'Cape Town, Western Cape',
+      students: '20,000+',
+      category: 'tvet'
+    },
+    {
+      id: 23,
+      name: 'False Bay TVET College',
+      type: 'TVET College',
+      badgeClass: 'bg-red-100 text-red-800 text-xs font-medium px-2.5 py-0.5 rounded',
+      description: 'Providing quality technical and vocational education in the Cape Peninsula region.',
+      location: 'Cape Town, Western Cape',
+      students: '13,000+',
+      category: 'tvet'
+    },
+    {
+      id: 24,
+      name: 'Northlink TVET College',
+      type: 'TVET College',
+      badgeClass: 'bg-red-100 text-red-800 text-xs font-medium px-2.5 py-0.5 rounded',
+      description: 'Serving the northern suburbs of Cape Town with programs in engineering and business.',
+      location: 'Cape Town, Western Cape',
+      students: '12,000+',
+      category: 'tvet'
+    },
+    // TVET Colleges - Eastern Cape
+    {
+      id: 25,
+      name: 'Buffalo City TVET College',
+      type: 'TVET College',
+      badgeClass: 'bg-red-100 text-red-800 text-xs font-medium px-2.5 py-0.5 rounded',
+      description: 'Leading TVET college in East London offering programs in engineering and business studies.',
+      location: 'East London, Eastern Cape',
+      students: '15,000+',
+      category: 'tvet'
+    },
+    {
+      id: 26,
+      name: 'Lovedale TVET College',
+      type: 'TVET College',
+      badgeClass: 'bg-red-100 text-red-800 text-xs font-medium px-2.5 py-0.5 rounded',
+      description: 'Historic TVET college in Alice, Eastern Cape, offering diverse technical programs.',
+      location: 'Alice, Eastern Cape',
+      students: '8,000+',
+      category: 'tvet'
+    },
+    // TVET Colleges - Free State
+    {
+      id: 27,
+      name: 'Motheo TVET College',
+      type: 'TVET College',
+      badgeClass: 'bg-red-100 text-red-800 text-xs font-medium px-2.5 py-0.5 rounded',
+      description: 'Serving the Free State region with programs in engineering, agriculture, and business.',
+      location: 'Bloemfontein, Free State',
+      students: '10,000+',
+      category: 'tvet'
+    },
+    // TVET Colleges - Limpopo
+    {
+      id: 28,
+      name: 'Capricorn TVET College',
+      type: 'TVET College',
+      badgeClass: 'bg-red-100 text-red-800 text-xs font-medium px-2.5 py-0.5 rounded',
+      description: 'Leading TVET college in Limpopo offering programs in engineering and business studies.',
+      location: 'Polokwane, Limpopo',
+      students: '12,000+',
+      category: 'tvet'
+    },
+    // TVET Colleges - Mpumalanga
+    {
+      id: 29,
+      name: 'Ehlanzeni TVET College',
+      type: 'TVET College',
+      badgeClass: 'bg-red-100 text-red-800 text-xs font-medium px-2.5 py-0.5 rounded',
+      description: 'Serving the Ehlanzeni region with programs in engineering, tourism, and agriculture.',
+      location: 'Nelspruit, Mpumalanga',
+      students: '9,000+',
+      category: 'tvet'
+    },
+    // TVET Colleges - North West
+    {
+      id: 30,
+      name: 'Orbit TVET College',
+      type: 'TVET College',
+      badgeClass: 'bg-red-100 text-red-800 text-xs font-medium px-2.5 py-0.5 rounded',
+      description: 'Providing technical and vocational education in the North West province.',
+      location: 'North West',
+      students: '7,000+',
+      category: 'tvet'
+    }
 ])
 
 // Computed property for filtered institutions
