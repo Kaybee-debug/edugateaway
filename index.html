@@ -35,6 +35,186 @@ function scrollToSection(sectionId) {
   }
 }
 
+// Institution data for filtering
+const institutions = [
+  {
+    id: 1,
+    name: 'University of Cape Town (UCT)',
+    type: 'Public University',
+    description: 'South Africa\'s oldest university and consistently ranked as the top university in Africa, offering world-class education and research.',
+    location: 'Cape Town, Western Cape',
+    students: '30,000+',
+    category: 'public'
+  },
+  {
+    id: 2,
+    name: 'University of the Witwatersrand (Wits)',
+    type: 'Public University',
+    description: 'A leading research university in Johannesburg, known for its strong programs in health sciences, engineering, and humanities.',
+    location: 'Johannesburg, Gauteng',
+    students: '40,000+',
+    category: 'public'
+  },
+  {
+    id: 3,
+    name: 'University of Pretoria (UP)',
+    type: 'Public University',
+    description: 'One of South Africa\'s largest universities, offering comprehensive programs across all faculties with strong research output.',
+    location: 'Pretoria, Gauteng',
+    students: '55,000+',
+    category: 'public'
+  },
+  {
+    id: 4,
+    name: 'University of South Africa (UNISA)',
+    type: 'Distance Learning',
+    description: 'Africa\'s largest distance learning institution, providing flexible education opportunities to students across the continent.',
+    location: 'Pretoria, Gauteng',
+    students: '400,000+',
+    category: 'online'
+  },
+  {
+    id: 5,
+    name: 'Stellenbosch University',
+    type: 'Public University',
+    description: 'A leading research university in the Western Cape, known for its strong programs in agriculture, engineering, and sciences.',
+    location: 'Stellenbosch, Western Cape',
+    students: '32,000+',
+    category: 'public'
+  },
+  {
+    id: 6,
+    name: 'University of Johannesburg (UJ)',
+    type: 'Public University',
+    description: 'A comprehensive university offering both traditional academic and technological qualifications in the heart of Johannesburg.',
+    location: 'Johannesburg, Gauteng',
+    students: '50,000+',
+    category: 'public'
+  },
+  {
+    id: 7,
+    name: 'Tshwane University of Technology (TUT)',
+    type: 'University of Technology',
+    description: 'South Africa\'s largest university of technology, offering practical, career-oriented degrees and diplomas.',
+    location: 'Pretoria, Gauteng',
+    students: '60,000+',
+    category: 'public'
+  },
+  {
+    id: 8,
+    name: 'IIE Varsity College',
+    type: 'Private College',
+    description: 'A leading private higher education institution offering career-focused programs across multiple campuses nationwide.',
+    location: 'Multiple Campuses',
+    students: '25,000+',
+    category: 'private'
+  },
+  {
+    id: 9,
+    name: 'AFDA',
+    type: 'Private College',
+    description: 'The South African School of Motion Picture Medium and Live Performance, offering creative arts and entertainment programs.',
+    location: 'Johannesburg, Cape Town',
+    students: '3,000+',
+    category: 'private'
+  },
+  {
+    id: 10,
+    name: 'Stadio Higher Education',
+    type: 'Private College',
+    description: 'A leading private higher education institution offering career-focused programs and professional qualifications.',
+    location: 'Multiple Campuses',
+    students: '15,000+',
+    category: 'private'
+  },
+  {
+    id: 11,
+    name: 'MANCOSA Online',
+    type: 'Online Platform',
+    description: 'Management College of Southern Africa offering flexible online learning programs for working professionals.',
+    location: 'Online',
+    students: '20,000+',
+    category: 'online'
+  },
+  {
+    id: 12,
+    name: 'Milpark Education',
+    type: 'Private College',
+    description: 'A private higher education institution offering business and management programs with flexible study options.',
+    location: 'Johannesburg, Cape Town',
+    students: '8,000+',
+    category: 'private'
+  }
+]
+
+// Filter institutions by category
+function filterInstitutions(category) {
+  const institutionsContainer = document.querySelector('#institutions-section .grid')
+  if (!institutionsContainer) return
+  
+  let filtered = institutions
+  if (category !== 'all') {
+    filtered = institutions.filter(inst => inst.category === category)
+  }
+  
+  // Clear current content
+  institutionsContainer.innerHTML = ''
+  
+  // Add filtered institutions
+  filtered.forEach(inst => {
+    const badgeClass = inst.category === 'public' ? 'bg-green-100 text-green-800' : 
+                      inst.category === 'private' ? 'bg-purple-100 text-purple-800' : 
+                      'bg-orange-100 text-orange-800'
+    
+    const institutionCard = document.createElement('div')
+    institutionCard.className = 'bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow cursor-pointer'
+    institutionCard.innerHTML = `
+      <div class="flex items-center justify-between mb-4">
+        <h3 class="text-xl font-semibold text-gray-900">${inst.name}</h3>
+        <span class="${badgeClass} text-xs font-medium px-2.5 py-0.5 rounded">${inst.type}</span>
+      </div>
+      <p class="text-gray-600 mb-4">${inst.description}</p>
+      <div class="flex items-center justify-between text-sm text-gray-500">
+        <span>${inst.location}</span>
+        <span>${inst.students}</span>
+      </div>
+    `
+    institutionsContainer.appendChild(institutionCard)
+  })
+  
+  // Update active category styling
+  const categoryCards = document.querySelectorAll('#categories-section .cursor-pointer')
+  categoryCards.forEach(card => {
+    card.classList.remove('border-blue-500', 'bg-blue-50', 'border-green-500', 'bg-green-50', 'border-purple-500', 'bg-purple-50', 'border-orange-500', 'bg-orange-50')
+    card.classList.add('border-gray-200')
+  })
+  
+  // Highlight selected category
+  const selectedCard = Array.from(categoryCards).find(card => {
+    const title = card.querySelector('h3').textContent.trim()
+    return (category === 'all' && title === 'All Institutions') ||
+           (category === 'public' && title === 'Public Universities') ||
+           (category === 'private' && title === 'Private Colleges') ||
+           (category === 'online' && title === 'Online Programs')
+  })
+  
+  if (selectedCard) {
+    selectedCard.classList.remove('border-gray-200')
+    if (category === 'all') {
+      selectedCard.classList.add('border-blue-500', 'bg-blue-50')
+    } else if (category === 'public') {
+      selectedCard.classList.add('border-green-500', 'bg-green-50')
+    } else if (category === 'private') {
+      selectedCard.classList.add('border-purple-500', 'bg-purple-50')
+    } else if (category === 'online') {
+      selectedCard.classList.add('border-orange-500', 'bg-orange-50')
+    }
+  }
+  
+  // Scroll to institutions section
+  scrollToSection('institutions')
+}
+
 // Add click handlers when page loads
 document.addEventListener('DOMContentLoaded', function() {
   // Navigation links
@@ -78,5 +258,73 @@ document.addEventListener('DOMContentLoaded', function() {
       link.addEventListener('click', () => scrollToSection('search'))
     }
   })
+  
+  // Category filter buttons
+  const categoryCards = document.querySelectorAll('#categories-section .cursor-pointer')
+  categoryCards.forEach(card => {
+    card.addEventListener('click', () => {
+      const title = card.querySelector('h3').textContent.trim()
+      if (title === 'All Institutions') {
+        filterInstitutions('all')
+      } else if (title === 'Public Universities') {
+        filterInstitutions('public')
+      } else if (title === 'Private Colleges') {
+        filterInstitutions('private')
+      } else if (title === 'Online Programs') {
+        filterInstitutions('online')
+      }
+    })
+  })
+  
+  // Search functionality
+  const searchInput = document.querySelector('input[placeholder*="Search universities"]')
+  const searchButton = document.querySelector('button[class*="bg-blue-600"]')
+  
+  if (searchInput && searchButton) {
+    const performSearch = () => {
+      const query = searchInput.value.toLowerCase()
+      if (query) {
+        const filtered = institutions.filter(inst => 
+          inst.name.toLowerCase().includes(query) ||
+          inst.description.toLowerCase().includes(query) ||
+          inst.location.toLowerCase().includes(query) ||
+          inst.type.toLowerCase().includes(query)
+        )
+        
+        const institutionsContainer = document.querySelector('#institutions-section .grid')
+        if (institutionsContainer) {
+          institutionsContainer.innerHTML = ''
+          filtered.forEach(inst => {
+            const badgeClass = inst.category === 'public' ? 'bg-green-100 text-green-800' : 
+                              inst.category === 'private' ? 'bg-purple-100 text-purple-800' : 
+                              'bg-orange-100 text-orange-800'
+            
+            const institutionCard = document.createElement('div')
+            institutionCard.className = 'bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow cursor-pointer'
+            institutionCard.innerHTML = `
+              <div class="flex items-center justify-between mb-4">
+                <h3 class="text-xl font-semibold text-gray-900">${inst.name}</h3>
+                <span class="${badgeClass} text-xs font-medium px-2.5 py-0.5 rounded">${inst.type}</span>
+              </div>
+              <p class="text-gray-600 mb-4">${inst.description}</p>
+              <div class="flex items-center justify-between text-sm text-gray-500">
+                <span>${inst.location}</span>
+                <span>${inst.students}</span>
+              </div>
+            `
+            institutionsContainer.appendChild(institutionCard)
+          })
+        }
+        scrollToSection('institutions')
+      }
+    }
+    
+    searchButton.addEventListener('click', performSearch)
+    searchInput.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') {
+        performSearch()
+      }
+    })
+  }
 })
 </script></body></html>
