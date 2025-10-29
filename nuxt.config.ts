@@ -3,14 +3,9 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   css: ['~/assets/css/main.css'],
   modules: ['@nuxtjs/tailwindcss'],
-  ssr: false,
-  nitro: {
-    prerender: {
-      routes: ['/']
-    }
-  },
+  ssr: true,
   app: {
     baseURL: '/edugateaway/',
-    buildAssetsDir: '/edugateaway/_nuxt/'
+    buildAssetsDir: '/_nuxt/'
   }
 })
