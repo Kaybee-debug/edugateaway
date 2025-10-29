@@ -378,7 +378,7 @@ const institutions = ref([
       students: '8,000+',
       category: 'private'
     },
-    // TVET Colleges - Gauteng
+    // TVET Colleges - Featured Selection
     {
       id: 13,
       name: 'Central Johannesburg TVET College',
@@ -391,36 +391,6 @@ const institutions = ref([
     },
     {
       id: 14,
-      name: 'Ekurhuleni East TVET College',
-      type: 'TVET College',
-      badgeClass: 'bg-red-100 text-red-800 text-xs font-medium px-2.5 py-0.5 rounded',
-      description: 'Providing quality technical and vocational education in the East Rand region with modern facilities.',
-      location: 'Ekurhuleni, Gauteng',
-      students: '12,000+',
-      category: 'tvet'
-    },
-    {
-      id: 15,
-      name: 'Ekurhuleni West TVET College',
-      type: 'TVET College',
-      badgeClass: 'bg-red-100 text-red-800 text-xs font-medium px-2.5 py-0.5 rounded',
-      description: 'Offering practical skills training in engineering, hospitality, and business studies.',
-      location: 'Ekurhuleni, Gauteng',
-      students: '10,000+',
-      category: 'tvet'
-    },
-    {
-      id: 16,
-      name: 'Sedibeng TVET College',
-      type: 'TVET College',
-      badgeClass: 'bg-red-100 text-red-800 text-xs font-medium px-2.5 py-0.5 rounded',
-      description: 'Committed to providing quality technical and vocational education in the Sedibeng region.',
-      location: 'Sedibeng, Gauteng',
-      students: '8,000+',
-      category: 'tvet'
-    },
-    {
-      id: 17,
       name: 'Tshwane North TVET College',
       type: 'TVET College',
       badgeClass: 'bg-red-100 text-red-800 text-xs font-medium px-2.5 py-0.5 rounded',
@@ -430,38 +400,7 @@ const institutions = ref([
       category: 'tvet'
     },
     {
-      id: 18,
-      name: 'Tshwane South TVET College',
-      type: 'TVET College',
-      badgeClass: 'bg-red-100 text-red-800 text-xs font-medium px-2.5 py-0.5 rounded',
-      description: 'Providing technical and vocational training with focus on practical skills development.',
-      location: 'Tshwane, Gauteng',
-      students: '14,000+',
-      category: 'tvet'
-    },
-    // TVET Colleges - KwaZulu-Natal
-    {
-      id: 19,
-      name: 'Coastal TVET College',
-      type: 'TVET College',
-      badgeClass: 'bg-red-100 text-red-800 text-xs font-medium px-2.5 py-0.5 rounded',
-      description: 'Serving the coastal region of KZN with programs in maritime studies, tourism, and hospitality.',
-      location: 'KwaZulu-Natal',
-      students: '11,000+',
-      category: 'tvet'
-    },
-    {
-      id: 20,
-      name: 'Elangeni TVET College',
-      type: 'TVET College',
-      badgeClass: 'bg-red-100 text-red-800 text-xs font-medium px-2.5 py-0.5 rounded',
-      description: 'Offering technical and vocational programs with emphasis on rural development and agriculture.',
-      location: 'KwaZulu-Natal',
-      students: '9,000+',
-      category: 'tvet'
-    },
-    {
-      id: 21,
+      id: 15,
       name: 'Thekwini TVET College',
       type: 'TVET College',
       badgeClass: 'bg-red-100 text-red-800 text-xs font-medium px-2.5 py-0.5 rounded',
@@ -470,9 +409,8 @@ const institutions = ref([
       students: '16,000+',
       category: 'tvet'
     },
-    // TVET Colleges - Western Cape
     {
-      id: 22,
+      id: 16,
       name: 'College of Cape Town',
       type: 'TVET College',
       badgeClass: 'bg-red-100 text-red-800 text-xs font-medium px-2.5 py-0.5 rounded',
@@ -482,28 +420,7 @@ const institutions = ref([
       category: 'tvet'
     },
     {
-      id: 23,
-      name: 'False Bay TVET College',
-      type: 'TVET College',
-      badgeClass: 'bg-red-100 text-red-800 text-xs font-medium px-2.5 py-0.5 rounded',
-      description: 'Providing quality technical and vocational education in the Cape Peninsula region.',
-      location: 'Cape Town, Western Cape',
-      students: '13,000+',
-      category: 'tvet'
-    },
-    {
-      id: 24,
-      name: 'Northlink TVET College',
-      type: 'TVET College',
-      badgeClass: 'bg-red-100 text-red-800 text-xs font-medium px-2.5 py-0.5 rounded',
-      description: 'Serving the northern suburbs of Cape Town with programs in engineering and business.',
-      location: 'Cape Town, Western Cape',
-      students: '12,000+',
-      category: 'tvet'
-    },
-    // TVET Colleges - Eastern Cape
-    {
-      id: 25,
+      id: 17,
       name: 'Buffalo City TVET College',
       type: 'TVET College',
       badgeClass: 'bg-red-100 text-red-800 text-xs font-medium px-2.5 py-0.5 rounded',
@@ -513,57 +430,13 @@ const institutions = ref([
       category: 'tvet'
     },
     {
-      id: 26,
-      name: 'Lovedale TVET College',
-      type: 'TVET College',
-      badgeClass: 'bg-red-100 text-red-800 text-xs font-medium px-2.5 py-0.5 rounded',
-      description: 'Historic TVET college in Alice, Eastern Cape, offering diverse technical programs.',
-      location: 'Alice, Eastern Cape',
-      students: '8,000+',
-      category: 'tvet'
-    },
-    // TVET Colleges - Free State
-    {
-      id: 27,
+      id: 18,
       name: 'Motheo TVET College',
       type: 'TVET College',
       badgeClass: 'bg-red-100 text-red-800 text-xs font-medium px-2.5 py-0.5 rounded',
       description: 'Serving the Free State region with programs in engineering, agriculture, and business.',
       location: 'Bloemfontein, Free State',
       students: '10,000+',
-      category: 'tvet'
-    },
-    // TVET Colleges - Limpopo
-    {
-      id: 28,
-      name: 'Capricorn TVET College',
-      type: 'TVET College',
-      badgeClass: 'bg-red-100 text-red-800 text-xs font-medium px-2.5 py-0.5 rounded',
-      description: 'Leading TVET college in Limpopo offering programs in engineering and business studies.',
-      location: 'Polokwane, Limpopo',
-      students: '12,000+',
-      category: 'tvet'
-    },
-    // TVET Colleges - Mpumalanga
-    {
-      id: 29,
-      name: 'Ehlanzeni TVET College',
-      type: 'TVET College',
-      badgeClass: 'bg-red-100 text-red-800 text-xs font-medium px-2.5 py-0.5 rounded',
-      description: 'Serving the Ehlanzeni region with programs in engineering, tourism, and agriculture.',
-      location: 'Nelspruit, Mpumalanga',
-      students: '9,000+',
-      category: 'tvet'
-    },
-    // TVET Colleges - North West
-    {
-      id: 30,
-      name: 'Orbit TVET College',
-      type: 'TVET College',
-      badgeClass: 'bg-red-100 text-red-800 text-xs font-medium px-2.5 py-0.5 rounded',
-      description: 'Providing technical and vocational education in the North West province.',
-      location: 'North West',
-      students: '7,000+',
       category: 'tvet'
     }
 ])
