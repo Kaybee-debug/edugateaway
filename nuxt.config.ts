@@ -6,6 +6,6 @@ export default defineNuxtConfig({
   ssr: false,
   app: {
     baseURL: '/edugateaway/',
-    buildAssetsDir: '/_nuxt/'
+    buildAssetsDir: '/edugateaway/_nuxt/'
   }
 })
